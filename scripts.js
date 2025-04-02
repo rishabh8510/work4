@@ -51,10 +51,11 @@ document.addEventListener('DOMContentLoaded', function() {
 // ============================= loan ============================
 
 const images = [
-    "assests/images/step1.png?v=123",
-    "assests/images/step2.png?v=456",
-    "assests/images/step3.png?v=789"
+    "https://rishabh8510.github.io/work4/assets/images/step1.png?v=" + new Date().getTime(),
+    "https://rishabh8510.github.io/work4/assets/images/step2.png?v=" + new Date().getTime(),
+    "https://rishabh8510.github.io/work4/assets/images/step3.png?v=" + new Date().getTime()
 ];
+
 let currentStep = 0;
 
 function changeStep(step) {
@@ -83,6 +84,7 @@ function autoSlide() {
 }
 
 setInterval(autoSlide, 3000);
+
 // ============================= loan ============================
 
 // <!-- ==================== calculator ==================== -->
