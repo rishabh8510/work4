@@ -1,0 +1,685 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LazyApp</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@3.2.0/fonts/remixicon.css" rel="stylesheet">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <!-- Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@3.2.0/fonts/remixicon.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Font Awesome (for fad/dot-circle icons) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/duotone.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <!-- /* =================== navbar =================================== */ -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-white">
+    <div class="container">
+      <a class="navbar-brand me-auto" href="#">LAZYPAY</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item dropdown">
+            <a class="nav-link " href="#" id="productsDropdown" role="button" data-bs-toggle="dropdown"
+              aria-expanded="false">
+              Products<i class="ri-arrow-down-s-line dropdown__arrow"></i>
+            </a>
+            <div class="dropdown-menu" aria-labelledby="productsDropdown">
+              <div class="dropdown-grid">
+                <div class="dropdown-item-product">
+                  <h6>PayLater</h6>
+                  <p>Checkout in 1-click</p>
+                </div>
+                <div class="dropdown-item-product">
+                  <h6>XpressLoan</h6>
+                  <p>Personal Loans</p>
+                </div>
+                <div class="dropdown-item-product">
+                  <h6>BillPay</h6>
+                  <p>Pay utility bills with credit</p>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Offers</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link" href="#" id="blogDropdown" role="button" data-bs-toggle="dropdown"
+              aria-expanded="false">
+              Blog<i class="ri-arrow-down-s-line dropdown__arrow"></i>
+            </a>
+            <div class="dropdown-menu" aria-labelledby="blogDropdown">
+              <div class="dropdown-grid">
+                <div class="dropdown-item-product">
+                  <h6>Credit</h6>
+                  <p>Insight into loans and debts</p>
+                </div>
+                <div class="dropdown-item-product">
+                  <h6>Finance</h6>
+                  <p>Personal Finance simplified</p>
+                </div>
+                <div class="dropdown-item-product">
+                  <h6>Check All</h6>
+                  <p>Lazypay Corner</p>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">For Businesses</a>
+          </li>
+        </ul>
+        <div class="right-buttons ms-lg-3">
+          <a href="#" class="btn btn-primary mx-lg-2 my-2 my-lg-0">Pay bill</a>
+          <a href="#" class="btn btn-outline-primary">Signup/Login</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+  <!-- /* =================== navbar =================================== */ -->
+
+  <!-- /* ======================= hero =================================== */ -->
+ <!-- ======= Hero Section ======= -->
+<section id="hero" class="d-flex align-items-center py-5 mt-5">
+  <div class="container position-relative">
+    <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel" data-bs-touch="true"
+      data-bs-pause="false">
+      <div class="carousel-indicators">
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
+          aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3" aria-label="Slide 4"></button>
+
+      </div>
+
+      <div class="carousel-inner pb-4">
+
+        <div class="carousel-item active" data-bs-interval="3000">
+          <div class="row align-items-center">
+            <div class="col-lg-8">
+              <h1 class="display-4 mb-3 fw-bold"><span class="text1">Unveiling Your</span><br> <span style="color: #1b1dc7;">Financial</span> <span
+                  class="text3">Potential</span></h1>
+              <p class="h5 mb-4">Discover Solutions for a Future Defined by Success and Much More Than Money</p>
+              <a href="all-insurance" class="btn btn-primary btn-lg">Know More</a>
+            </div>
+            <div class="col-lg-4 text-end">
+              <img class="img-fluid p-1" src="1.png" alt="First slide">
+            </div>
+          </div>
+        </div>
+
+        <div class="carousel-item" data-bs-interval="3000">
+          <div class="row align-items-center">
+            <div class="col-lg-8">
+              <h1 class="display-4 mb-3 fw-bold"><span class="text1">Instant personal</span> <span style="color: #1b1dc7;">loan</span> <span class="text3">in 1
+                  minute</span></h1>
+              <p class="h5 mb-4">Instant Loans, Instant Smiles!</p>
+              <a href="Insta-loan" class="btn btn-primary btn-lg">Apply Now</a>
+            </div>
+            <div class="col-lg-4 text-end">
+              <img class="img-fluid p-1" src="2.png" alt="Second slide">
+            </div>
+          </div>
+        </div>
+
+        <div class="carousel-item" data-bs-interval="3000">
+          <div class="row align-items-center">
+            <div class="col-lg-8">
+              <h1 class="display-4 mb-3 fw-bold"><span class="text1">Your New </span> <span style="color: #1b1dc7;">Home Journey </span> <span
+                  class="text3">Begins Here </span></h1>
+              <p class="h5 mb-4">You simply find Dream Home, we will work towards making it reality. Get assistance even after
+                disbursement.</p>
+              <a href="home-loan" class="btn btn-primary btn-lg">Apply Now</a>
+            </div>
+            <div class="col-lg-4 text-end">
+              <img class="img-fluid p-1" src="3.png" alt="Second slide">
+            </div>
+          </div>
+        </div>
+
+        <div class="carousel-item" data-bs-interval="3000">
+          <div class="row align-items-center">
+            <div class="col-lg-8">
+              <h1 class="display-4 mb-3 fw-bold"><span class="text1">Free Credit Score</span> <span style="color: #1b1dc7;">Check </span> <span class="text3">is
+                  Now Live </span></h1>
+              <p class="h5 mb-4">Get your free CIBIL score and detailed credit report instantly in just a few clicks!</p>
+              <a href="credit-score" class="btn btn-primary btn-lg">Check Now</a>
+            </div>
+            <div class="col-lg-4 text-end">
+              <img class="img-fluid p-1" src="4.png" alt="Second slide">
+            </div>
+          </div>
+        </div>
+
+
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End Hero -->
+  <!-- /* ======================= hero =================================== */ -->
+
+  <div class="marquee mt-5 mb-5">
+    <ul class="marquee__content">
+      <li><i class="far fa-dot-circle"></i> 100% paperless approval and disbursement process.</li>
+      <li><i class="far fa-dot-circle"></i> Minimum KYC & income documents required for a loan.</li>
+      <li><i class="far fa-dot-circle"></i> Flexibility to partpay or foreclose loan after 1st EMI.</li>
+      <li><i class="far fa-dot-circle"></i> Cash Flow Management & Working Capital Enhancement.</li>
+      <li><i class="far fa-dot-circle"></i> 70+ Banks & NBFC Products to choose from</li>
+    </ul>
+    <!-- Mirrored content -->
+    <ul class="marquee__content" aria-hidden="true">
+      <li><i class="far fa-dot-circle"></i> 100% paperless approval and disbursement process.</li>
+      <li><i class="far fa-dot-circle"></i> Minimum KYC & income documents required for a loan.</li>
+      <li><i class="far fa-dot-circle"></i> Flexibility to partpay or foreclose loan after 1st EMI.</li>
+      <li><i class="far fa-dot-circle"></i> Cash Flow Management & Working Capital Enhancement.</li>
+      <li><i class="far fa-dot-circle"></i> 70+ Banks & NBFC Products to choose from</li>
+    </ul>
+  </div>
+
+  <!-- /* ======================= hero2 =================================== */ -->
+  <section id="product_section" class="py-5 pl-5" style="padding-left: 10px;">
+    <div class="container">
+      <div class="row align-items-center">
+        <!-- Left Column - Content -->
+        <div class="col-lg-6 mb-4 mb-lg-0">
+          <h2 class="display-5 fw-bold mb-4 size">
+            Bringing you the <span style="color: #1b1dc7;">Best Products</span> from Top Banks & Financial Institutions
+          </h2>
+
+          <div class="row g-4">
+            <!-- Personal Loan -->
+            <div class="col-6 col-md-4">
+              <a href="personal-loan" class="text-decoration-none">
+                <div class="p-3 text-center rounded h-100 product-card bg-primary text-white">
+                  <i class="fas fa-rupee-sign fa-2x mb-3"></i>
+                  <h5 class="mb-0">Personal Loan</h5>
+                </div>
+              </a>
+            </div>
+
+            <!-- Business Loan -->
+            <div class="col-6 col-md-4">
+              <a href="business-loan" class="text-decoration-none">
+                <div class="p-3 text-center rounded h-100 product-card bg-primary text-white">
+                  <i class="fas fa-briefcase fa-2x mb-3"></i>
+                  <h5 class="mb-0">Business Loan</h5>
+                </div>
+              </a>
+            </div>
+
+            <!-- Home Loan -->
+            <div class="col-6 col-md-4">
+              <a href="home-loan" class="text-decoration-none">
+                <div class="p-3 text-center rounded h-100 product-card bg-primary text-white">
+                  <i class="fas fa-home fa-2x mb-3"></i>
+                  <h5 class="mb-0">Home Loan</h5>
+                </div>
+              </a>
+            </div>
+
+            <!-- Free Credit Score -->
+            <div class="col-6 col-md-4">
+              <a href="credit-score" class="text-decoration-none">
+                <div class="p-3 text-center rounded h-100 product-card bg-primary text-white">
+                  <i class="fas fa-chart-line fa-2x mb-3"></i>
+                  <h5 class="mb-0">Free Credit Score</h5>
+                </div>
+              </a>
+            </div>
+
+            <!-- Credit Cards -->
+            <div class="col-6 col-md-4">
+              <a href="credit-cards" class="text-decoration-none">
+                <div class="p-3 text-center rounded h-100 product-card bg-primary text-white">
+                  <i class="far fa-credit-card fa-2x mb-3"></i>
+                  <h5 class="mb-0">Credit Cards</h5>
+                </div>
+              </a>
+            </div>
+
+            <!-- Personal Finance -->
+            <div class="col-6 col-md-4">
+              <a href="investments" class="text-decoration-none">
+                <div class="p-3 text-center rounded h-100 product-card bg-primary text-white">
+                  <i class="fas fa-wallet fa-2x mb-3"></i>
+                  <h5 class="mb-0">Personal Finance</h5>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Column - GIF Image -->
+        <div class="col-lg-6 text-center">
+          <img src="hero5.gif" class="img-fluid" alt="Financial Products" style="max-height: 400px;">
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- /* ======================= hero =================================== */ -->
+
+
+  <!-- loan================ -->
+
+  <div class="container py-5 loan mt-5">
+    <div class="mb-4">
+      <h2 class="text-center font-weight-bold h1 fw-bold">Apply for your loan in 3 easy steps</h2>
+      <p class="text-center text-secondary">It only takes 5 minutes</p>
+    </div>
+
+    <div class="row align-items-center">
+      <!-- Left Section (Image) - Fixed on left -->
+      <div class="col-lg-6 col-md-6 text-center mb-4 mb-md-0">
+        <img id="stepImage" src="assests/images/Step1.png?v=123" alt="Step Image" 
+             class="img-fluid" 
+             style="max-height: 370px; width: auto; object-fit: contain;">
+      </div>
+
+      <!-- Right Section (Steps) -->
+      <div class="col-lg-6 col-md-6">
+        <div class="card p-3 p-lg-4">
+          <div class="d-flex align-items-center step active" data-step="0">
+            <div class="step-number bg-primary text-white rounded-circle d-flex align-items-center justify-content-center me-3" style="min-width: 36px; height: 36px;">
+              1
+            </div>
+            <div>
+              <p class="mb-1 text-uppercase text-secondary small">Step 1</p>
+              <p class="fw-semibold mb-0">Enter a few details and check your eligibility</p>
+            </div>
+          </div>
+
+          <div class="d-flex align-items-center step mt-3" data-step="1">
+            <div class="step-number bg-secondary text-white rounded-circle d-flex align-items-center justify-content-center me-3" style="min-width: 36px; height: 36px;">
+              2
+            </div>
+            <div>
+              <p class="mb-1 text-uppercase text-secondary small">Step 2</p>
+              <p class="fw-semibold mb-0">Finish your online application on the LazyPay app</p>
+            </div>
+          </div>
+
+          <div class="d-flex align-items-center step mt-3" data-step="2">
+            <div class="step-number bg-secondary text-white rounded-circle d-flex align-items-center justify-content-center me-3" style="min-width: 36px; height: 36px;">
+              3
+            </div>
+            <div>
+              <p class="mb-1 text-uppercase text-secondary small">Step 3</p>
+              <p class="fw-semibold mb-0">Get XpressCash instantly in your bank account</p>
+            </div>
+          </div>
+          
+          <button class="btn btn-primary mt-3 w-100 py-2">Check Eligibility</button>
+        </div>
+      </div>
+    </div>
+</div>
+
+<style>
+  @media (max-width: 767.98px) {
+    #stepImage {
+      max-height: 300px;
+    }
+  }
+</style>
+  <!-- loan=============== -->
+
+  <!-- ============= why loan =========================== -->
+
+  <section class="loan-section">
+    <h2 class="text-center font-weight-bold h1 fw-bold" style="font-size: 40px;">Why apply for a loan on LazyPay?</h2>
+    <p class="sub-text">It's easy, fast, and flexible</p>
+
+    <div class="loan">
+      <div class="con">
+        <img src="images/EMI1.avif" alt="Strawberry" class="img-fruit" style="width: 150px;" />
+        <h3 class="text-lowercase">Flexible EMI options</h3>
+        <p>
+          EMI plans that suit you
+        </p>
+      </div>
+      <div class="con">
+        <img src="images/emi2.avif" alt="Strawberry" class="img-fruit" style="height:80px; width: 80px" />
+        <h3 class="text-lowercase ">Zero paperwork</h3>
+        <p>
+          Everything’s online and 100% digital
+        </p>
+      </div>
+      <div class="con">
+        <img src="images/emi3.avif" alt="Strawberry" class="img-fruit" style="height:80px; width: 80px" />
+        <h3 class="text-lowercase">Lightning fast approvals</h3>
+        <p>
+          Money sent instantly to your account
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ============ why loan =========================== -->
+
+  <!-- ==================== calculator ==================== -->
+
+  <div class="container">
+    <div class="text-center mt-4">
+      <h1 class="page-title font-weight-bold h1">Calculate your personal loan EMI</h1>
+      <p class="page-subtitle">Choose from a variety of flexible EMI plans</p>
+    </div>
+
+    <div class="calculator-container">
+      <div class="row g-4">
+        <div class="col-12 col-md-6">
+          <div class="input-section">
+            <div class="mb-3">
+              <div class="input-label text-white">LOAN AMOUNT</div>
+              <div class="input-value text-white">₹<span id="loanAmountValue text-white">10,000</span>
+              </div>
+            </div>
+            <input type="range" class="range-slider" id="loanAmount" min="10000" max="250000" value="10000" step="1000">
+            <div class="range-limits">
+              <span class="text-white">₹10K</span>
+              <span class="text-white">₹25L</span>
+            </div>
+          </div>
+
+          <div class="input-section">
+            <div class="mb-3">
+              <div class="input-label text-white">TENURE</div>
+              <div class="d-flex justify-content-between">
+                <div class="input-value"><span id="tenureValue" class="text-white">3</span> <span
+                    class="text-white">months</span></div>
+                <div class="mt-4"><span style="color: #666;" class="text-white">at 18% p.a.</span></div>
+              </div>
+            </div>
+            <input type="range" class="range-slider" id="tenure" min="3" max="24" value="3" step="1">
+            <div class="range-limits">
+              <span class="text-white">3 months</span>
+              <span class="text-white">24 months</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-12 col-md-6">
+          <div class="result-card">
+            <div class="text-center">
+              <div class="emi-label">Your Monthly EMI</div>
+              <div class="main-amount">₹<span id="monthlyEMI">3,434</span></div>
+            </div>
+
+            <div class="detail-row">
+              <span class="detail-label text-black">Loan Amount</span>
+              <span class="detail-value">₹<span id="displayLoanAmount">10,000</span></span>
+            </div>
+
+            <div class="detail-row">
+              <span class="detail-label text-black">Interest at 18% p.a.</span>
+              <span class="detail-value">₹<span id="totalInterest">301</span></span>
+            </div>
+
+            <div class="detail-row">
+              <span class="detail-label text-black">Total payable</span>
+              <span class="detail-value">₹<span id="totalAmount">10,301</span></span>
+            </div>
+
+            <button class="check-eligibility">Check eligibility</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== calculator ==================== -->
+
+  <!-- =================testimonial============================= -->
+  <section class="testimonial-section">
+    <div class="container">
+      <!-- Marquee Moving Left -->
+      <div class="marquee-container">
+        <div class="marquee-content marquee-left">
+          <div class="testimonial-card">
+            <span class="quote-icon">❝</span>
+            <p class="testimonial-text">
+              I took a loan from XpressLoan for my home inauguration. It had better and
+              more attractive interest rates compared to KreditBee, Early salary, IDFC First.
+            </p>
+            <div class="testimonial-author-info">
+              <div>
+                <h5 class="testimonial-author">Ankit Singh</h5>
+                <p class="testimonial-role">Age - 23</p>
+              </div>
+              <img src="images/ankitt.avif" alt="Devid Elson" class="testimonial-img">
+            </div>
+          </div>
+
+          <div class="testimonial-card">
+            <span class="quote-icon">❝</span>
+            <p class="testimonial-text">
+              XpressLoan is hassle free and has reasonable rate of interest. I took an
+              education loan, and it was easy to process and convenient to repay.
+            </p>
+            <div class="testimonial-author-info">
+              <div>
+                <h5 class="testimonial-author">Sushil Pandey</h5>
+                <p class="testimonial-role">Age - 43</p>
+              </div>
+              <img src="images/sushil.avif" alt="Sarah Williams" class="testimonial-img">
+            </div>
+          </div>
+
+          <div class="testimonial-card">
+            <span class="quote-icon">❝</span>
+            <p class="testimonial-text">
+              I used the amount for my medical expenses. It's easy to get the amount
+              compare to other platforms if you're eligible & It's very transparent about everything,
+              nothing
+              they hide from their User.
+            </p>
+            <div class="testimonial-author-info">
+              <div>
+                <h5 class="testimonial-author">Alok Mondal</h5>
+                <p class="testimonial-role">Age - 23</p>
+              </div>
+              <img src="images/alok.avif" alt="Sarah Williams" class="testimonial-img">
+            </div>
+          </div>
+
+          <div class="testimonial-card">
+            <span class="quote-icon">❝</span>
+            <p class="testimonial-text">
+              It's the simplest way to get money without any hidden charges. It's very
+              easy. I
+              booked a car for myself using XpressLoan.
+            </p>
+            <div class="testimonial-author-info">
+              <div>
+                <h5 class="testimonial-author">Yashraj Jain</h5>
+                <p class="testimonial-role">Age - 24</p>
+              </div>
+              <img src="images/yashraj.avif" alt="Sarah Williams" class="testimonial-img">
+            </div>
+          </div>
+
+          <div class="testimonial-card">
+            <span class="quote-icon">❝</span>
+            <p class="testimonial-text">
+              Purchased a Laptop for my business. It's very easy and for urgent short of
+              cash
+              LazyPay has given always financial backup for me. We are using it for a very long time.
+            </p>
+            <div class="testimonial-author-info">
+              <div>
+                <h5 class="testimonial-author">Anjali Kumari</h5>
+                <p class="testimonial-role">Age - 26</p>
+              </div>
+              <img src="images/anjali.avif" alt="Sarah Williams" class="testimonial-img">
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Marquee Moving Right -->
+      <div class="marquee-container">
+        <div class="marquee-content marquee-right">
+          <div class="testimonial-card">
+            <span class="quote-icon">❝</span>
+            <p class="testimonial-text">
+              Purchased a Laptop for my business. It's very easy and for urgent short of
+              cash
+              LazyPay has given always financial backup for me. We are using it for a very long time.
+            </p>
+            <div class="testimonial-author-info">
+              <div>
+                <h5 class="testimonial-author">Anjali Kumari</h5>
+                <p class="testimonial-role">Age - 26</p>
+              </div>
+              <img src="images/anjali.avif" alt="John Doe" class="testimonial-img">
+            </div>
+          </div>
+
+          <div class="testimonial-card">
+            <span class="quote-icon">❝</span>
+            <p class="testimonial-text">
+              It's the simplest way to get money without any hidden charges. It's very
+              easy. I
+              booked a car for myself using XpressLoan.
+            </p>
+            <div class="testimonial-author-info">
+              <div>
+                <h5 class="testimonial-author">Yashraj Jain</h5>
+                <p class="testimonial-role">Age - 24</p>
+              </div>
+              <img src="images/yashraj.avif" alt="Emma Watson" class="testimonial-img">
+            </div>
+          </div>
+
+          <div class="testimonial-card">
+            <span class="quote-icon">❝</span>
+            <p class="testimonial-text">
+              I used the amount for my medical expenses. It's easy to get the amount
+              compare to other platforms if you're eligible & It's very transparent about everything,
+              nothing
+              they hide from their User.
+            </p>
+            <div class="testimonial-author-info">
+              <div>
+                <h5 class="testimonial-author">Alok Mondal</h5>
+                <p class="testimonial-role">Age - 23</p>
+              </div>
+              <img src="images/alok.avif" alt="Emma Watson" class="testimonial-img">
+            </div>
+          </div>
+
+          <div class="testimonial-card">
+            <span class="quote-icon">❝</span>
+            <p class="testimonial-text">
+              XpressLoan is hassle free and has reasonable rate of interest. I took an
+              education loan, and it was easy to process and convenient to repay.
+            </p>
+            <div class="testimonial-author-info">
+              <div>
+                <h5 class="testimonial-author">Sushil Pandey</h5>
+                <p class="testimonial-role">Age - 43</p>
+              </div>
+              <img src="images/sushil.avif" alt="Emma Watson" class="testimonial-img">
+            </div>
+          </div>
+
+          <div class="testimonial-card">
+            <span class="quote-icon">❝</span>
+            <p class="testimonial-text">
+              I took a loan from XpressLoan for my home inauguration. It had better and
+              more attractive interest rates compared to KreditBee, Early salary, IDFC First.
+            </p>
+            <div class="testimonial-author-info">
+              <div>
+                <h5 class="testimonial-author">Ankit Singh</h5>
+                <p class="testimonial-role">Age - 23</p>
+              </div>
+              <img src="images/ankitt.avif" alt="Emma Watson" class="testimonial-img">
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- =================testimonial============================= -->
+
+  <!-- ====================footer========================== -->
+
+  <footer class="bg-black text-white py-5">
+    <div class="container">
+      <div class="row align-items-start">
+        <div class="col-lg-3">
+          <h5>India’s Credit Super-app</h5>
+          <p>Get Credit in 90 seconds. Shop at Millions of Merchants. Pay Later.</p>
+          <h5 class="mt-3">LAZYPAY</h5>
+        </div>
+        <div class="col-lg-2">
+          <h6>Products</h6>
+          <ul class="list-unstyled">
+            <li>PayLater</li>
+            <li>XpressLoan</li>
+            <li>BillPay</li>
+            <li>Insurance</li>
+          </ul>
+        </div>
+        <div class="col-lg-2">
+          <h6>Partners</h6>
+          <ul class="list-unstyled">
+            <li>Licious</li>
+            <li>EatClub</li>
+            <li>Meesho</li>
+            <li>All Partners</li>
+          </ul>
+        </div>
+        <div class="col-lg-2">
+          <h6>Resources</h6>
+          <ul class="list-unstyled">
+            <li>About</li>
+            <li>Blog</li>
+            <li>Offers</li>
+            <li>Help Center</li>
+            <li>Sitemap</li>
+          </ul>
+        </div>
+        <div class="col-lg-3">
+          <h6>Contact us</h6>
+          <p>02269821111 (MON to SUN 10 AM to 7 PM)</p>
+          <p>wecare@lazypay.in</p>
+          <div>
+            <i class="bi bi-instagram me-2"></i>
+            <i class="bi bi-twitter me-2"></i>
+            <i class="bi bi-youtube"></i>
+          </div>
+        </div>
+      </div>
+      <hr class="text-white">
+      <p class="text-center">&copy; 2025 Lazypay. All rights reserved</p>
+    </div>
+  </footer>
+
+
+  <!-- ====================footer========================== -->
+
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="scripts.js"></script>
+</body>
+
+</html>
