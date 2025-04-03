@@ -66,10 +66,10 @@ function changeStep(step) {
     }, 500);
 
     $(".step").removeClass("active");
-    $(".step-number").removeClass("bg-primary").addClass("bg-secondary");
+    $(".step-number").removeClass("bg-white").addClass("bg-light");
 
     $(".step").eq(step).addClass("active");
-    $(".step").eq(step).find(".step-number").removeClass("bg-secondary").addClass("bg-primary");
+    $(".step").eq(step).find(".step-number").removeClass("bg-light").addClass("bg-white");
 }
 
 $(".step").click(function () {
@@ -87,45 +87,163 @@ setInterval(autoSlide, 3000);
 
 // <!-- ==================== calculator ==================== -->
 
-document.addEventListener("DOMContentLoaded", function () {
-    const loanAmountSlider = document.getElementById("loanAmount");
-    const tenureSlider = document.getElementById("tenure");
+// document.addEventListener("DOMContentLoaded", function () {
+//     const loanAmountSlider = document.getElementById("loanAmount");
+//     const tenureSlider = document.getElementById("tenure");
 
-    const loanAmountValue = document.getElementById("loanAmountValue");
-    const tenureValue = document.getElementById("tenureValue");
+//     const loanAmountValue = document.getElementById("loanAmountValue");
+//     const tenureValue = document.getElementById("tenureValue");
 
-    const monthlyEMI = document.getElementById("monthlyEMI");
-    const totalInterest = document.getElementById("totalInterest");
-    const totalAmount = document.getElementById("totalAmount");
-    const displayLoanAmount = document.getElementById("displayLoanAmount");
+//     const monthlyEMI = document.getElementById("monthlyEMI");
+//     const totalInterest = document.getElementById("totalInterest");
+//     const totalAmount = document.getElementById("totalAmount");
+//     const displayLoanAmount = document.getElementById("displayLoanAmount");
 
-    const interestRate = 18; // Fixed interest rate (18% per annum)
+//     const interestRate = 18; 
 
-    function calculateEMI() {
-        let P = parseInt(loanAmountSlider.value); // Loan Amount
-        let N = parseInt(tenureSlider.value); // Tenure in Months
-        let R = interestRate / 12 / 100; // Monthly Interest Rate
+//     function calculateEMI() {
+//         let P = parseInt(loanAmountSlider.value); 
+//         let N = parseInt(tenureSlider.value); 
+//         let R = interestRate / 12 / 100; 
 
-        // EMI Calculation Formula
-        let EMI = (P * R * Math.pow(1 + R, N)) / (Math.pow(1 + R, N) - 1);
-        let totalPayable = EMI * N;
-        let totalInterestAmount = totalPayable - P;
+      
+//         let EMI = (P * R * Math.pow(1 + R, N)) / (Math.pow(1 + R, N) - 1);
+//         let totalPayable = EMI * N;
+//         let totalInterestAmount = totalPayable - P;
 
-        // Update the values in UI
-        monthlyEMI.textContent = Math.round(EMI).toLocaleString();
-        totalInterest.textContent = Math.round(totalInterestAmount).toLocaleString();
-        totalAmount.textContent = Math.round(totalPayable).toLocaleString();
-        displayLoanAmount.textContent = P.toLocaleString();
-        loanAmountValue.textContent = P.toLocaleString();
-        tenureValue.textContent = N;
+//         monthlyEMI.textContent = Math.round(EMI).toLocaleString();
+//         totalInterest.textContent = Math.round(totalInterestAmount).toLocaleString();
+//         totalAmount.textContent = Math.round(totalPayable).toLocaleString();
+//         displayLoanAmount.textContent = P.toLocaleString();
+//         loanAmountValue.textContent = P.toLocaleString();
+//         tenureValue.textContent = N;
+//     }
+
+   
+//     loanAmountSlider.addEventListener("input", calculateEMI);
+//     tenureSlider.addEventListener("input", calculateEMI);
+
+
+//     calculateEMI();
+// });
+
+function updateEMI() {
+    let principal = parseFloat(document.getElementById("loanAmount").value);
+    let tenure = parseInt(document.getElementById("loanTenure").value) * 12;
+    let rate = parseFloat(document.getElementById("interestRate").value) / 1200;
+
+    let emi = (principal * rate * Math.pow(1 + rate, tenure)) / (Math.pow(1 + rate, tenure) - 1);
+    let totalPayment = emi * tenure;
+    let totalInterest = totalPayment - principal;
+
+    document.getElementById("monthlyEMI").textContent = `₹${emi.toFixed(2)}`;
+    document.getElementById("totalInterest").textContent = `₹${totalInterest.toFixed(2)}`;
+    document.getElementById("totalPayment").textContent = `₹${totalPayment.toFixed(2)}`;
+
+    updateChart(principal, totalInterest);
+}
+
+function updateChart(principal, interest) {
+    let ctx = document.getElementById("emiChart").getContext("2d");
+    if (window.emiChartInstance) {
+        window.emiChartInstance.destroy();
     }
+    window.emiChartInstance = new Chart(ctx, {
+        type: "pie",
+        data: {
+            labels: ["Principal", "Total Interest"],
+            datasets: [{
+                data: [principal, interest],
+                backgroundColor: ["#ff7f50", "#f4f4f4"]
+            }]
+        }
+    });
+}
 
-    // Event listeners to update values dynamically
-    loanAmountSlider.addEventListener("input", calculateEMI);
-    tenureSlider.addEventListener("input", calculateEMI);
-
-    // Initial Calculation
-    calculateEMI();
+document.getElementById("loanAmount").addEventListener("input", function () {
+    document.getElementById("loanAmountDisplay").value = this.value;
+    updateEMI();
+});
+document.getElementById("loanTenure").addEventListener("input", function () {
+    document.getElementById("loanTenureDisplay").value = this.value;
+    updateEMI();
+});
+document.getElementById("interestRate").addEventListener("input", function () {
+    document.getElementById("interestRateDisplay").value = this.value;
+    updateEMI();
 });
 
+updateEMI();
+
 // <!-- ==================== calculator ==================== --> 
+
+document.addEventListener("DOMContentLoaded", function () {
+    const marqueeContent = document.querySelector(".marquee-content");
+    const testimonialCards = document.querySelectorAll(".testimonial-card");
+    let index = 0;
+
+    function showNextTestimonial() {
+        index = (index + 1) % testimonialCards.length;
+        marqueeContent.style.transform = `translateX(-${index * 100}%)`;
+    }
+
+    setInterval(showNextTestimonial, 4000); // 4 सेकंड बाद अगला Testimonial दिखेगा
+});
+
+//   <!-- ============================ Our  Partners ====================== -->
+
+$(document).ready(function(){
+    $('.customer-logos').slick({
+        slidesToShow: 6,
+        slidesToScroll: 1,
+        autoplay: true,
+        autoplaySpeed: 1500,
+        arrows: false,
+        dots: false,
+        pauseOnHover: false,
+        responsive: [{
+            breakpoint: 768,
+            settings: {
+                slidesToShow: 4
+            }
+        }, {
+            breakpoint: 520,
+            settings: {
+                slidesToShow: 3
+            }
+        }]
+    });
+});
+
+//   <!-- ============================ Our  Partners ====================== -->
+
+
+$(document).ready(function () {
+    $('.cust').slick({
+        slidesToShow: 3,
+        slidesToScroll: 1,
+        autoplay: true,
+        autoplaySpeed: 3000,
+        arrows: false,
+        pauseOnHover: false,
+        cssEase: 'linear',
+        speed: 1500,
+        infinite: true,
+        rtl: false,
+        variableWidth: false,
+        responsive: [
+            {
+                breakpoint: 992,
+                settings: {
+                    slidesToShow: 2
+                }
+            },
+            {
+                breakpoint: 768,
+                settings: {
+                    slidesToShow: 1
+                }
+            }
+        ]
+    });
+});
