@@ -668,7 +668,7 @@ html, body {
 .m {
            
     margin: auto;
-    background: white;
+    /* background: white; */
     padding: 20px;
     border-radius: 10px;
 
@@ -723,14 +723,15 @@ html, body {
     justify-content: center;
     position: relative;
     margin-bottom: 20px; 
+    
 }
 
 
 .marquee-content {
     display: flex;
-    gap: 40px; 
+    gap: 20px; 
     width: max-content;
-    padding-right: 40px; 
+    /* padding-right: 40px;  */
     animation-play-state: running;
 }
 
@@ -754,7 +755,7 @@ html, body {
 .testimonial-card {
     min-width: 380px;
     max-width: 420px;
-    background: whitesmoke;
+    background: white;
     padding: 25px;
     border-radius: 16px;
     text-align: left;

@@ -217,33 +217,17 @@ $(document).ready(function(){
 
 //   <!-- ============================ Our  Partners ====================== -->
 
+document.addEventListener("DOMContentLoaded", function () {
+    // Select the marquee content
+    const marquee = document.querySelector(".marquee-content");
 
-$(document).ready(function () {
-    $('.cust').slick({
-        slidesToShow: 3,
-        slidesToScroll: 1,
-        autoplay: true,
-        autoplaySpeed: 3000,
-        arrows: false,
-        pauseOnHover: false,
-        cssEase: 'linear',
-        speed: 1500,
-        infinite: true,
-        rtl: false,
-        variableWidth: false,
-        responsive: [
-            {
-                breakpoint: 992,
-                settings: {
-                    slidesToShow: 2
-                }
-            },
-            {
-                breakpoint: 768,
-                settings: {
-                    slidesToShow: 1
-                }
-            }
-        ]
-    });
+    if (marquee) {
+        // Clone the marquee content
+        const clone = marquee.cloneNode(true);
+        marquee.parentNode.appendChild(clone);
+
+        // Apply the correct class to move left to right
+        marquee.classList.add("marquee-right");
+        clone.classList.add("marquee-right");
+    }
 });
