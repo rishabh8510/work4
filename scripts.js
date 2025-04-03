@@ -218,16 +218,53 @@ $(document).ready(function(){
 //   <!-- ============================ Our  Partners ====================== -->
 
 document.addEventListener("DOMContentLoaded", function () {
-    // Select the marquee content
     const marquee = document.querySelector(".marquee-content");
+    const marqueeContainer = document.querySelector(".marquee-container");
 
-    if (marquee) {
-        // Clone the marquee content
-        const clone = marquee.cloneNode(true);
-        marquee.parentNode.appendChild(clone);
+    if (marquee && marqueeContainer) {
+        // First, reset any existing clones
+        const existingClones = marquee.parentNode.querySelectorAll('.marquee-clone');
+        existingClones.forEach(clone => clone.remove());
 
-        // Apply the correct class to move left to right
-        marquee.classList.add("marquee-right");
-        clone.classList.add("marquee-right");
+        // Create two clones (one for seamless looping)
+        const clone1 = marquee.cloneNode(true);
+        const clone2 = marquee.cloneNode(true);
+        clone1.classList.add('marquee-clone');
+        clone2.classList.add('marquee-clone');
+        
+        // Add spacing between items
+        clone1.style.marginLeft = "30px";
+        clone2.style.marginLeft = "30px";
+        
+        // Append clones
+        marquee.parentNode.appendChild(clone1);
+        marquee.parentNode.appendChild(clone2);
+
+        // Calculate total width
+        const marqueeWidth = marquee.scrollWidth;
+        const containerWidth = marqueeContainer.offsetWidth;
+        
+        // Set container width to show full content during animation
+        const totalWidth = (marqueeWidth * 3) + 60; // Original + 2 clones + spacing
+        marqueeContainer.style.width = `${totalWidth}px`;
+
+        // Create the animation
+        const keyframes = [
+            { transform: 'translateX(0)' },
+            { transform: `translateX(-${marqueeWidth + 30}px)` } // Move by one marquee width + spacing
+        ];
+        
+        const options = {
+            duration: 20000, // 20 seconds
+            iterations: ease
+        };
+
+        // Remove any existing animation
+        marqueeContainer.style.animation = 'none';
+        
+        // Apply new animation
+        marqueeContainer.animate(keyframes, options);
     }
 });
+
+

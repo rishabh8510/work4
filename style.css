@@ -752,8 +752,9 @@ html, body {
 }
 
 
+
 .testimonial-card {
-    min-width: 380px;
+    min-width: 400px;
     max-width: 420px;
     background: whitesmoke;
     padding: 25px;
@@ -764,6 +765,7 @@ html, body {
     flex-direction: column;
     justify-content: space-between;
     transition: box-shadow 0.3s ease-in-out;
+    flex-shrink: 0;
 }
 
 
@@ -830,7 +832,7 @@ html, body {
 
 @keyframes marqueeRightContinuous {
     from {
-        transform: translateX(-50%);
+        transform: translateX(-97%);
     }
     to {
         transform: translateX(0);
@@ -841,6 +843,7 @@ html, body {
 .marquee-container:hover .marquee-content {
     animation-play-state: paused;
 }
+
 
 
 /* =====================================testimonial====================================== */
