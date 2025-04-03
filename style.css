@@ -668,7 +668,7 @@ html, body {
 .m {
            
     margin: auto;
-    /* background: white; */
+    background: white;
     padding: 20px;
     border-radius: 10px;
 
@@ -755,7 +755,7 @@ html, body {
 .testimonial-card {
     min-width: 380px;
     max-width: 420px;
-    background: white;
+    background: whitesmoke;
     padding: 25px;
     border-radius: 16px;
     text-align: left;
