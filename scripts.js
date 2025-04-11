@@ -187,7 +187,7 @@ document.addEventListener("DOMContentLoaded", function () {
         marqueeContent.style.transform = `translateX(-${index * 100}%)`;
     }
 
-    setInterval(showNextTestimonial, 4000); // 4 सेकंड बाद अगला Testimonial दिखेगा
+    setInterval(showNextTestimonial, 4000); 
 });
 
 //   <!-- ============================ Our  Partners ====================== -->
